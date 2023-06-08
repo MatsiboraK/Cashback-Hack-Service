@@ -54,6 +54,26 @@ public class CashbackHackServiceTest {
     }
 
     @org.testng.annotations.Test
+    public void shouldSuggestAddingOn1() {
+        int amount = 999;
+
+        int actual = service.remain(amount);
+        int expected = 1;
+
+        org.testng.Assert.assertEquals(actual, expected);
+    }
+
+    @org.testng.annotations.Test
+    public void shouldSuggestAddingOn999() {
+        int amount = 1;
+
+        int actual = service.remain(amount);
+        int expected = 999;
+
+        org.testng.Assert.assertEquals(actual, expected);
+    }
+
+    @org.testng.annotations.Test
     public void shouldSuggestAddingOn500IfAmountMoreThen1000() {
         int amount = 1500;
 
